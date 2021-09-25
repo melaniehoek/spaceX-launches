@@ -25,7 +25,7 @@ export const LaunchCard: FC<ILaunch> = ({
       cursor="pointer"
       _hover={{ boxShadow: "sm", bg: hoverBg }}
     >
-      <VStack spacing="4" align="start">
+      <VStack spacing="4" align={["center", "start"]}>
         <Image
           src={flickr_images?.[0]}
           fallbackSrc="/fallback.png"
@@ -33,16 +33,16 @@ export const LaunchCard: FC<ILaunch> = ({
           borderRadius="full"
           boxSize="70px"
         />
-        <VStack align="start">
+        <VStack align={["center", "start"]}>
           <LaunchBadge upcoming={upcoming} launch_success={launch_success} />
-          <Box>
-            <Heading as="h3" size="md">
+          <VStack spacing="0" align={["center", "start"]}>
+            <Heading as="h3" size="md" textAlign={["center", "start"]}>
               {mission_name}
             </Heading>
             <Text variant="muted" fontSize="sm">
               {formatDate(launch_date_unix)}
             </Text>
-          </Box>
+          </VStack>
         </VStack>
       </VStack>
     </Container>

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { gql } from "@apollo/client";
 import {
   Heading,
-  HStack,
+  Stack,
   Link,
   Text,
   VStack,
@@ -29,28 +29,28 @@ const LaunchPage: FC<ILaunchDetail> = ({
 }) => {
   return (
     <PageLayout>
-      <HStack spacing="6" align="start">
+      <Stack direction={["column", "column", "row"]} spacing="6" align="start">
         {flickr_images?.length && (
           <Image
             src={flickr_images[0]}
             fallbackSrc="/fallback.png"
             alt={`spaceX rocket: ${mission_name}`}
-            w="400px"
-            h="500px"
+            w={["100%", "100%", "400px"]}
+            h={["200px", "200px", "500px"]}
             objectFit="cover"
           />
         )}
-        <VStack align="stretch" spacing={4}>
+        <VStack align="stretch" spacing="4">
           <Container variant="card">
-            <VStack align="start" spacing={4}>
-              <Flex w="100%" align="start" justify="space-between">
-                <Box>
-                  <Heading as="h2">{mission_name}</Heading>
-                  <LaunchBadge
-                    upcoming={upcoming}
-                    launch_success={launch_success}
-                  />
-                </Box>
+            <VStack align={["center", "start"]} spacing="4">
+              <VStack spacing="1" align={["center", "start"]}>
+                <Heading as="h2" textAlign={["center", "start"]}>
+                  {mission_name}
+                </Heading>
+                <LaunchBadge
+                  upcoming={upcoming}
+                  launch_success={launch_success}
+                />
                 <Text variant="muted">
                   {video_link?.length && (
                     <Link isExternal href={video_link} mr="2">
@@ -68,32 +68,32 @@ const LaunchPage: FC<ILaunchDetail> = ({
                     </Link>
                   )}
                 </Text>
-              </Flex>
+              </VStack>
 
-              <Box>
-                <Text variant="muted">
+              <VStack spacing="1" align={["center", "start"]}>
+                <Text variant="muted" textAlign={["center", "start"]}>
                   <Icon as={FaRocket} mr="2" />
                   <span>
                     {rocket_name} {rocket_type}
                   </span>
                 </Text>
-                <Text variant="muted">
+                <Text variant="muted" textAlign={["center", "start"]}>
                   <Icon as={MdLocationOn} mr="2" />
                   <span>
                     {site_name_long} ({site_name})
                   </span>
                 </Text>
-              </Box>
+              </VStack>
             </VStack>
           </Container>
 
           {details && (
             <Container variant="card">
-              <Text>{details}</Text>
+              <Text textAlign={["center", "start"]}>{details}</Text>
             </Container>
           )}
         </VStack>
-      </HStack>
+      </Stack>
     </PageLayout>
   );
 };

@@ -15,13 +15,14 @@ export const Navbar = () => {
         maxW="container.lg"
         py="4"
         display="flex"
+        flexDirection={["column", "row"]}
         justifyContent="space-between"
       >
         <Heading textDecoration="none" as="h1" size="lg">
           <Link href={`${PATHS.HOME}`}>SpaceX Launches</Link>
         </Heading>
 
-        <HStack s="4">
+        <HStack s="4" alignSelf="flex-end">
           <Text
             fontSize="sm"
             fontWeight="bold"

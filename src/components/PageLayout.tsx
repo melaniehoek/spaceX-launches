@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Container, Box } from "@chakra-ui/layout";
+import { Container, Grid } from "@chakra-ui/layout";
 import Head from "next/head";
 
-import { Navbar } from "components";
+import { Navbar, Footer } from "components";
 
 export const PageLayout: FC = ({ children }) => {
   return (
@@ -13,14 +13,16 @@ export const PageLayout: FC = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Grid h="100vh" gridTemplateRows="auto 1fr auto">
         <Navbar />
-        <Container maxW="container.lg" py="4">
-          {children}
-        </Container>
-      </main>
+        <main>
+          <Container maxW="container.lg" py="4">
+            {children}
+          </Container>
+        </main>
 
-      <footer></footer>
+        <Footer />
+      </Grid>
     </div>
   );
 };
