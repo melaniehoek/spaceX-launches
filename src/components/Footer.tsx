@@ -1,6 +1,6 @@
 import Icon from "@chakra-ui/icon";
 import { Container, HStack, Text, Link } from "@chakra-ui/layout";
-import { FaGithub } from "react-icons/Fa";
+import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => (
   <footer>
