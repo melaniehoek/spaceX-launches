@@ -8,11 +8,11 @@ export const Footer = () => (
       <HStack justifyContent={["center"]}>
         <Text variant="muted" fontSize="sm">
           Site by{" "}
-          <Link href="https://www.linkedin.com/in/melaniehoek/">
+          <Link isExternal href="https://www.linkedin.com/in/melaniehoek/">
             Melanie Hoek
           </Link>
         </Text>
-        <Link href="https://github.com/melaniehoek/spaceX-launches">
+        <Link isExternal href="https://github.com/melaniehoek/spaceX-launches">
           <Icon as={FaGithub} />
         </Link>
       </HStack>
