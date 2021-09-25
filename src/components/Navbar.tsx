@@ -1,4 +1,4 @@
-import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
+import { useColorMode } from "@chakra-ui/color-mode";
 import { Container, Heading, Box, Text, HStack } from "@chakra-ui/layout";
 import { Switch } from "@chakra-ui/switch";
 import Link from "next/link";
@@ -7,10 +7,9 @@ import { PATHS } from "utils";
 
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const boxShadow = useColorModeValue("sm", "none");
 
   return (
-    <Box boxShadow={boxShadow}>
+    <Box>
       <Container
         as="header"
         maxW="container.lg"

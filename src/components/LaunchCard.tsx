@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Heading, Text, VStack } from "@chakra-ui/layout";
+import { Container, Box, Heading, Text, VStack } from "@chakra-ui/layout";
 import { Image, useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
@@ -16,22 +16,19 @@ export const LaunchCard: FC<ILaunch> = ({
   upcoming,
 }) => {
   const router = useRouter();
-  const bg = useColorModeValue("blackAlpha.50", "whiteAlpha.50");
+  const hoverBg = useColorModeValue("gray.200", "whiteAlpha.200");
 
   return (
-    <Box
-      borderRadius="lg"
+    <Container
+      variant="card"
       onClick={() => router.push(PATHS.LAUNCH(id))}
       cursor="pointer"
-      boxShadow="md"
-      _hover={{ boxShadow: "xl" }}
-      bg={bg}
+      _hover={{ boxShadow: "sm", bg: hoverBg }}
     >
-      <VStack spacing="4" align="start" p="4">
+      <VStack spacing="4" align="start">
         <Image
-          src={flickr_images[0]}
-          // todo fallback img
-          fallbackSrc="https://via.placeholder.com/70"
+          src={flickr_images?.[0]}
+          fallbackSrc="/fallback.png"
           alt={`spaceX rocket: ${mission_name}`}
           borderRadius="full"
           boxSize="70px"
@@ -42,12 +39,12 @@ export const LaunchCard: FC<ILaunch> = ({
             <Heading as="h3" size="md">
               {mission_name}
             </Heading>
-            <Text color="gray.500" fontSize="sm">
+            <Text variant="muted" fontSize="sm">
               {formatDate(launch_date_unix)}
             </Text>
           </Box>
         </VStack>
       </VStack>
-    </Box>
+    </Container>
   );
 };
