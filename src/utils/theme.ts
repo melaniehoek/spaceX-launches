@@ -18,7 +18,7 @@ const customTheme = {
         cardOuter: {
           borderRadius: "lg",
           maxW: "container.xl",
-          w: "300px",
+          w: "100%",
           h: "250px",
           cursor: "pointer",
           p: 0,
@@ -29,7 +29,6 @@ const customTheme = {
           bg: props.colorMode === "light" ? "gray.100" : "whiteAlpha.50",
           w: "100%",
           h: "100%",
-          position: "absolute",
           backfaceVisibility: "hidden",
           transition: "transform 0.8s",
         }),

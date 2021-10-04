@@ -69,6 +69,8 @@ export const LaunchCard: FC<ILaunch> = ({
           variant="cardFace"
           transform="rotateY(180deg)"
           className="card-back"
+          position="absolute"
+          top="0"
         >
           <Text textAlign={["center", "start"]} noOfLines={8}>
             {details}
