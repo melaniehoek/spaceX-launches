@@ -7,10 +7,10 @@ export interface ILaunch {
   };
   launch_success: boolean | null;
   upcoming: boolean;
+  details: string;
 }
 
 export interface ILaunchDetail extends ILaunch {
-  details: string;
   launch_site: {
     site_name: string;
     site_name_long: string;

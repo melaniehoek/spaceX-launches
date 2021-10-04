@@ -59,6 +59,7 @@ export const getStaticProps = async () => {
           launch_date_unix
           launch_success
           upcoming
+          details
         }
       }
     `,
